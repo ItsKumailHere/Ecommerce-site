@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { useCart } from "../components/CardContext";
+import { CartItem, useCart } from "../components/CardContext";
 import { Trash2 } from "lucide-react";
 import Link from "next/link";
 
@@ -33,7 +33,7 @@ export default function Cart() {
       ) : (
         <div className="grid md:grid-cols-3 gap-8">
           <div className="md:col-span-2">
-            {cartItems.map((item: any) => (
+            {cartItems.map((item: CartItem) => (
               <motion.div
                 key={item.id}
                 initial={{ opacity: 0, y: 20 }}
